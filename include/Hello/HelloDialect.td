@@ -6,7 +6,7 @@ include "mlir/IR/OpBase.td"
 
 // Hello dialect definition.
 
-def Hello_Dialect2 : Dialect {
+def Hello_Dialect : Dialect {
     let name = "hello";
     let summary = "A hello out-of-tree MLIR dialect.";
     let description = [{
@@ -21,6 +21,6 @@ def Hello_Dialect2 : Dialect {
 
 // mnemonic 指名字
 class Hello_Op<string mnemonic, list<Trait> traits = []> :
-    Op<Hello_Dialect2, mnemonic, traits>;
+    Op<Hello_Dialect, mnemonic, traits>;
 
 #endif // HELLO_DIALECT
